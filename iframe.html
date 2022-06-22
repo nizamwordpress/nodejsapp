@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+<body>
+
+	<div class="embed-container">
+		<div data-iframe-src="https://www.youtube.com/embed/tgbNymZ7vqY" data-id="YouTubefirst" data-frameborder="0">
+			First iframe
+		</div>
+	</div>
+	
+	<br>
+	<div class="embed-container">
+		<div data-iframe-src="https://www.youtube.com/embed/9YffrCViTVk" data-id="YouTubesecond" data-frameborder="1">
+			Second iframe
+		</div>
+	</div>
+	
+	<br>
+
+	<div class="embed-container">
+		<div data-iframe-src="third" data-id="thirdid" data-frameborder="5">
+			Third iframe
+		</div>
+	</div>
+	
+	<br>
+
+
+	<div class="embed-container">
+		<iframe src="https://www.youtube.com/embed/5X7SZmCHy7A?rel=0&showinfo=0&enablejsapi=1" id="YouTubeV1" frameborder="0"></iframe>
+	</div>
+	
+	<script>
+	$('div[data-iframe-src]').each(function() {
+		let $setiframe = $(this);
+		
+		
+		let srcurl = $setiframe.attr('data-iframe-src')
+		let id = $setiframe.attr('data-id')
+		let border = $setiframe.attr('data-frameborder')
+		
+		let iframe = document.createElement("iframe");
+		
+		iframe.setAttribute("src", srcurl);
+		iframe.setAttribute("id", id);
+		iframe.setAttribute("frameborder", border);
+		
+		$setiframe.html(iframe);
+		
+	});
+	</script>
+</body>
+</html>
